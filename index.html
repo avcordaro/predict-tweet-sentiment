@@ -7,11 +7,11 @@
   <script>
     function test() {
       var tweet = document.getElementById("tweet").value;
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://tweet-sentiment-prediction-x74ktrrneq-ew.a.run.app");
-      xhr.setRequestHeader("Content-Type", "plain/text");
-
-      xhr.onreadystatechange = function() {
+      if (tweet != "") {
+	      var xhr = new XMLHttpRequest();
+	      xhr.open("POST", "https://tweet-sentiment-prediction-x74ktrrneq-ew.a.run.app");
+	      xhr.setRequestHeader("Content-Type", "plain/text");
+	      xhr.onreadystatechange = function() {
           if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             document.getElementById("load").style.display = "none";
             if (xhr.responseText == "Positive") {
@@ -22,9 +22,10 @@
               document.getElementById("pos").style.display = "none";
             }
           }
-      }
-      xhr.send(tweet);
-      document.getElementById("load").style.display = "inline";
+	      }
+	      xhr.send(tweet);
+	      document.getElementById("load").style.display = "inline";
+	  	}
     }
   </script>
   <div style="text-align: center; width: 100%; margin-top: 100px">
