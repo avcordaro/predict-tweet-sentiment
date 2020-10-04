@@ -1,0 +1,30 @@
+body {
+  background-image: url("assets/bg.jpg");
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+  height: 150px;
+  width: 500px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: none;
+  text-align: center;
+}
+
+button {
+  background-color: #1a3a7a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #234ea6;
+}

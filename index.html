@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <script>
+    function test() {
+      var tweet = document.getElementById("tweet").value;
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://tweet-sentiment-prediction-x74ktrrneq-ew.a.run.app");
+      xhr.setRequestHeader("Content-Type", "plain/text");
+
+      xhr.onreadystatechange = function() {
+          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            document.getElementById("load").style.display = "none";
+            if (xhr.responseText == "Positive") {
+              document.getElementById("pos").style.display = "block";
+              document.getElementById("neg").style.display = "none";
+            } else {
+              document.getElementById("neg").style.display = "block";
+              document.getElementById("pos").style.display = "none";
+            }
+          }
+      }
+      xhr.send(tweet);
+      document.getElementById("load").style.display = "inline";
+    }
+  </script>
+  <div style="text-align: center; width: 100%; margin-top: 100px">
+    <img src="assets/twitterlogo.png" width="75" height="75">
+    <h3>Tweet Sentiment Prediction</h3>
+    <p id="pos" style="color: green; display: none"><b>POSITIVE</b></p>
+    <p id ="neg" style="color: red; display: none"><b>NEGATIVE</b></p>
+    <textarea id="tweet" name="tweet" placeholder="Enter the tweet..."></textarea>
+    <br>
+    <button type="button" onclick="test()">Predict</button>
+    <br>
+    <img id="load" src="assets/loading.gif" width="25" height="25" style="margin-top:20px; display: none">
+  </div>
+</body>
+</html>
