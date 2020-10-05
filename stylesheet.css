@@ -1,6 +1,4 @@
 body {
-  background-image: url("assets/bg.jpg");
-  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -8,12 +6,17 @@ textarea {
   height: 150px;
   width: 500px;
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   resize: none;
   text-align: center;
+  outline: none;
+}
+
+textarea:focus {
+  border: 2px solid #a3a3a3;
 }
 
 button {
@@ -23,6 +26,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  outline: none;
 }
 
 button:hover {

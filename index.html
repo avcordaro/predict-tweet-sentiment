@@ -25,10 +25,12 @@
 	      }
 	      xhr.send(tweet);
 	      document.getElementById("load").style.display = "inline";
+	  	} else {
+	  		alert("Please enter a tweet first.")
 	  	}
     }
   </script>
-  <div style="text-align: center; width: 100%; margin-top: 100px">
+  <div style="text-align: center; margin-top: 100px">
     <img src="assets/twitterlogo.png" width="75" height="75">
     <h3>Tweet Sentiment Prediction</h3>
     <p id="pos" style="color: green; display: none"><b>POSITIVE</b></p>
